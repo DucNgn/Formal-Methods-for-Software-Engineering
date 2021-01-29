@@ -11,6 +11,7 @@ on:
 
 jobs:
   build_latex:
+    name: Compile LaTeX document for Assignment ${{ matrix.assignmentNumber }}
     runs-on: ubuntu-18.04
     
     strategy:
@@ -22,7 +23,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Compile LaTeX document in Assignment ${ matrix.assignmentNumber }
+      - name: Compile LaTeX document 
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: Assignment${ matrix.assignmentNumber }/main.tex
+          root_file: Assignment${{ matrix.assignmentNumber }}/main.tex
