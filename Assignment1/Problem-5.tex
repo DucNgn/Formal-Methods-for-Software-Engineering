@@ -1,43 +1,7 @@
 \newpage
 
 \section{Problem 5 (12 pts)}
-\subsection{Description}
 
-\noindent Let $A = \{ 0, 1, 2, 3, 4 \}$ and relations $R$, $S$, $T$, and $U$ on $A$ defined as follows:
-
-\[ R = \{ (0, 0),  (0, 1),  (0, 3),  (1, 0),  (1, 1),  (2, 2),  (3, 0),  (3, 1), (3, 3), (4, 0), (4, 1), (4, 3), (4, 4)  \}\]
-
-\[ S = \{ (0, 1),  (1, 1),  (2, 3),  (2, 4), (3, 0), (3, 4), (4, 0), (4, 1), (4, 4)  \}\]
-
-\[ T = \{ (0, 3), (0, 4),  (2, 1), (3, 2), (4, 2), (4, 3) \}\]
-
-\[ U = \{ (0, 0),  (0, 1), (0, 3), (1, 0), (1, 1), (1, 3), (2, 2), (3, 0), (3, 1), (3, 3), (4, 4) \}\]
-
-\noindent Fill in the table below, using $\checkmark$, or $\times$.
-
-\begin{center}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-						&	&	$R$	&	$S$	&	$T$	& $U$\\
-\hline
-\textbf{Reflexive} 	&   &		&		&	&	 \\
-\hline
-\textbf{Irreflexive} 	&   &		&		&	&	 \\
-\hline
-\textbf{Symmetric} 	&   &		&		&	&	 \\
-\hline
-\textbf{Asymmetric} 	&   &		&		&	&	 \\
-\hline
-\textbf{Antisymmetric} &   &		&		&	&	 \\
-\hline
-\textbf{Transitive} 	&   &		&		&	&	 \\
-\hline
-\textbf{Equivalence} 	&   &		&		&	&	 \\
-\hline
-\textbf{Partial order} 	&   &		&		&	&	 \\
-\hline
-\end{tabular}
-\end{center}
 \subsection{Answer}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -62,3 +26,52 @@
 \hline
 \end{tabular}
 \end{center}
+
+\underline{Relation R}
+\begin{itemize}
+    \item Reflexive:  Since (0,0), (1,1), (2,2) (3,3), (4,4) $\in R$, it is reflexive.
+    \item Irreflexive: Not irreflexive since an element that is related to itself exists (i.e (0,0)).
+    \item Symmetric: Not symmetric since (3,1) $\in R$, but (1,3) $\notin R$.
+    \item Asymmetric: Not asymmetric since (0,1), (1,0) $\in R$.
+    \item Antisymmetric: Not antisymmetric since (0,1), (1,0) $\in R$, but 0 $\neq$ 1.
+    \item Transitive: Not transitive since (1,0), (0,3) $\in R$, but (1,3) $\notin R$. 
+    \item Equivalence: Not an equivalence relation since it is not reflexive, symmetric and transitive.
+    \item Partial order: Not a partial order relation since it is not reflexive, antisymmetric and transitive.
+\end{itemize}
+
+
+\underline{Relation S}
+\begin{itemize}
+    \item Reflexive: Not reflexive since (0,0) $\notin S$.
+    \item Irreflexive: Not irreflexive since (1,1) $\in S$.
+    \item Symmetric: Not symmetric since (0,1) $\in S$, but (1,0) $\notin S$.
+    \item Asymmetric: Not asymmetric since (1,1) $\in S$, which is a self-loop.
+    \item Antisymmetric: Since every element in $S$ is not bidirectional except for self-loops, it is antisymmetric.
+    \item Transitive: Not transitive since (2,3), (3,0) $\in S$, but (2,0) $\notin S$.
+    \item Equivalence: Not an equivalence relation since it is not reflexive, symmetric and transitive.
+    \item Partial order: Not a partial order relation since it is not reflexive, antisymmetric and transitive.
+\end{itemize}
+
+\underline{Relation T}
+\begin{itemize}
+    \item Reflexive: Not reflexive since (0,0) $\notin S$.
+    \item Irreflexive: Since no element that is related to itself belongs to $T$, it is irreflexive.
+    \item Symmetric: Not symmetric since (0,3) $\in T$, but (3,0) $\notin T$.
+    \item Asymmetric: Since no element in $T$ is bidirectional and there are no elements that are self-loops, it is asymmetric. 
+    \item Antisymmetric: Since the relation is asymmetric, it is antisymmetric.
+    \item Transitive: Not transitive since (0,3), (3,2) $\in S$, but (0,2) $\notin S$.
+    \item Equivalence: Not an equivalence relation since it is not reflexive, symmetric and transitive.
+    \item Partial order: Not a partial order relation since it is not reflexive, antisymmetric and transitive.
+\end{itemize}
+
+\underline{Relation U}
+\begin{itemize}
+    \item Reflexive: Since (0,0), (1,1), (2,2) (3,3), (4,4) $\in U$, it is reflexive.
+    \item Irreflexive: Not irreflexive since an element that is related to itself exists (i.e (0,0)).
+    \item Symmetric: Since every pair in $U$ is bidirectional, it is symmetric.
+    \item Asymmetric: Not asymmetric since (0,1), (1,0) $\in U$.
+    \item Antisymmetric: Not antisymmetric since (0,1), (1,0) $\in U$, but 0 $\neq$ 1.
+    \item Transitive: Since $\forall a,b,c \in A$: ($aUb \wedge bUc$) $\rightarrow$ $aUc$, it is transitive.
+    \item Equivalence: Since the relation is reflexive, symmetric and transitive, it is an equivalence relation.
+    \item Partial order: Not a partial order relation since it is not reflexive, antisymmetric and transitive.
+\end{itemize}
