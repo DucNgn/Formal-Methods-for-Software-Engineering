@@ -1,20 +1,31 @@
 \newpage
 
 \section{Problem 4 (12 pts)}
-\subsection{Description}
-
 Consider list $\Lambda = \langle w, x, y, z \rangle$, deployed to implement a Queue Abstract Data Type.
 
+\subsection{Enqueue and dequeue operations with head of list as front of queue}
+
+\begin{itemize}
+    \item[] enqueue(el, $\Lambda$):  $\Lambda$' = cons($\Lambda$, el)
+    \item[] dequeue($\Lambda$): $\Lambda$' = tail($\Lambda$)
+\end{itemize}
+
+\subsection{Let head of A correspond to the rear of Queue}
+
+\subsubsection{cons(el, $\Lambda$)}
 \begin{enumerate}
+    \item[] \textbf{Result:} $\langle el, w, x, y, z \rangle$
+    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$)
+\end{enumerate}
 
-\item Let the head of $\Lambda$ correspond to the front position of the Queue. Implement operations \texttt{enqueue(el, $\Lambda$)} and \texttt{dequeue($\Lambda$)} using list construction operations. In both cases we can refer to $\Lambda'$ as the state of the list upon successful termination of one of its operations.
-
-\item Let us now reverse the way we manipulate our data structure and let the head of $\Lambda$ correspond to the rear of the Queue.
+\subsubsection{list(el, $\Lambda$)}
 \begin{enumerate}
-\item What would be the result of $cons(el, \Lambda)$, and would it be a correct implementation for operation \texttt{enquue(el, $\Lambda$)}?
-\item What would be the result of $list(el, \Lambda)$, and would it be a correct implementation for operation \texttt{enqueue(el, $\Lambda$)}?
-\item What would be the result of $concat(list(el), \Lambda)$, and would it be a correct implementation for operation \texttt{enqueue(el, $\Lambda$)}?
-\end{enumerate}
+    \item[] \textbf{Result:} $\langle el, \langle w, x, y, z \rangle \rangle$
+    \item[] It's \textbf{not} the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it creates list containing A as a list inside.
 \end{enumerate}
 
-\subsection{Answer}
+\subsubsection{concat(list(el), $\Lambda$)}
+\begin{enumerate}
+    \item[] \textbf{Result:} $\langle el, w, x, y, z \rangle$
+    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$)
+\end{enumerate}
