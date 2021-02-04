@@ -11,3 +11,26 @@ Consider the predicate \textit{asks(a, b)} that is interpreted as \textit{``a ha
 \end{enumerate}
 
 \subsection{Answer}
+
+\begin{enumerate}
+  \item $\forall a \exists b~asks(a, b)\rightarrow$ Every person has asked at least one person out on a date.\\
+  \\
+  $\exists b \forall a~asks(a, b)\rightarrow$ There is one person that have been asked out on a date by everyone else.
+  \item  We cannot claim that
+  $\forall a \exists b~asks(a, b) \rightarrow \exists y \forall x ~asks(a, b)$. 
+  The first predicate states that everyone has asked out at least one person (b) on a date. We have no information
+  about the other person. Everyone could have asked someone different or they could have asked the same person. The
+  predicate do not provide this information.\\
+  The second predicate states that one person was asked out by everyone. Here it is specified that everyone asked out
+  the same person.\\
+  Therefore,
+  $\forall a \exists b~asks(a, b) \rightarrow \exists y \forall x ~asks(a, b)$
+   is \textbf{false}.
+  \item We can confirm that it is justifiable to claim that
+  $\exists y \forall x ~asks(a, b) \rightarrow \forall a \exists b~asks(a, b)$.
+  Indeed, claiming that someone have been asked out by everyone ($\exists y \forall x ~asks(a, b)$) implies that 
+  everyone has asked out at least one person ($\forall a \exists b~asks(a, b)$).\\
+  Therefore, the claim
+  $\exists y \forall x ~asks(a, b) \rightarrow \forall a \exists b~asks(a, b)$
+  is \textbf{true}.
+\end{enumerate}
