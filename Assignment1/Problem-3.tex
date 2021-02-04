@@ -1,29 +1,77 @@
 \newpage
 
 \section{Problem 3 (12 pts)}
-\subsection{Description}
+\subsection{Formalize sentences and indicate formal type}
 
-\noindent Let $scientist(x)$ denote the statement ``x is a scientist'', and $honest(x)$ denote the statement ``x is honest.'' Formalize the following sentences and indicate their corresponding formal type.
-
+Let's denote
 \begin{enumerate}
-\item ``No scientists are honest.''
-
-\item ``All scientists are crooked.''
-
-\item ``All scientists are honest.''
-
-\item ``Some scientists are crooked.''
-
-\item ``Some scientists are honest.''
-
-\item ``No scientist is crooked.''
-
-\item ``Some scientists are not crooked.''
-
-\item ``Some scientists are not honest.''
-
+    \item[]\textbf{P(x)}: scientist(x): ``x is a scientist''
+    \item[]\textbf{Q(x)}: honest(x): ``x is honest''
 \end{enumerate}
 
-\noindent Identify pairs that are contradictories, contraries, subcontraries, and pairs that support subalteration (clearly indicating superaltern and subaltern)\\
+We can formalize the statements as following
 
-\subsection{Answer}
+\begin{enumerate}
+    \item ``No scientists are honest.'' = $\forall x, (P(x) \to \neg Q(x))$ = E form
+
+    \item ``All scientists are crooked.'' = $\forall x, (P(x) \to \neg Q(x))$ = E form
+
+    \item ``All scientists are honest.'' = $\forall x, (P(x) \to Q(x))$ = A form
+
+    \item ``Some scientists are crooked.'' = $\exists x, (P(x) \wedge \neg Q(x))$ = O form
+
+    \item ``Some scientists are honest.'' = $\exists x, (P(w) \wedge Q(x))$ = I form
+
+    \item ``No scientist is crooked.'' = $\forall x, (P(x) \to Q(x))$ = A form
+
+    \item ``Some scientists are not crooked.'' = $\exists x, (P(x) \wedge Q(x))$ = I form
+
+    \item ``Some scientists are not honest.'' = $\exists x, (P(x) \wedge \neg Q(x))$ = O form
+\end{enumerate}
+
+
+\subsection{Identify pairs that are contradictories, contraries, subcontraries, and pairs that support subalteration}
+
+
+
+\subsubsection{Pairs of contradictories}
+\begin{itemize}
+    \item (3) and (4)
+    \item (6) and (4)
+    \item (3) and (8)
+    \item (6) and (8)
+    \item (5) and (1)
+    \item (5) and (2)
+    \item (7) and (1)
+    \item (7) and (2)
+\end{itemize}
+
+
+\subsubsection{Pairs of contraries}
+\begin{itemize}
+    \item (3) and (1)
+    \item (6) and (1)
+    \item (3) and (2)
+    \item (6) and (2)
+\end{itemize}
+
+\subsubsection{Pairs of subcontraries}
+\begin{itemize}
+    \item (5) and (8)
+    \item (7) and (8)
+    \item (5) and (4)
+    \item (7) and (4)
+\end{itemize}
+
+\subsubsection{Pairs that support subalteration}
+\begin{itemize}
+    \item Subaltern: (5) - Superaltern: (3)
+    \item Subaltern: (5) - Superaltern: (6)
+    \item Subaltern: (7) - Superaltern: (3)
+    \item Subaltern: (7) - Superaltern: (6)
+    \item Subaltern: (4) - Superaltern: (1)
+    \item Subaltern: (4) - Superaltern: (2)
+    \item Subaltern: (8) - Superaltern: (1)
+    \item Subaltern: (8) - Superaltern: (2)
+\end{itemize}
+
