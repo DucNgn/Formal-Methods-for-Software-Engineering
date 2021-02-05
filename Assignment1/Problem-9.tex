@@ -32,7 +32,7 @@ laptops = \\
 
 \[ \{ xps15, xps13, swift3, envyx360 \}  \lhd laptops \]
 
-\noindent What is the meaning of perator $\lhd$ and where would you deploy such operator in the context of a database management system?
+\noindent What is the meaning of operator $\lhd$ and where would you deploy such operator in the context of a database management system?
 
 \item What is the result of the expression
 
@@ -67,4 +67,64 @@ laptops = \\
 
 \end{enumerate}
 
+
 \subsection{Answer}
+\begin{enumerate}
+
+\item dom laptops = \{legion5, macbookair, xps15, spectre, xps13, swift3, macbookpro, dragonfly, envyx360 \}
+\\ \\
+ran laptops = \{lenovo, apple, dell, hp, acer\} \\
+
+\item \{ xps15, xps13, swift3, envyx360 \}  $\lhd$ laptops  = \\
+\{ xps15 $\mapsto$ dell, \\
+xps13 $\mapsto$ dell, \\
+swift3 $\mapsto$ acer, \\
+envyx360 $\mapsto$ hp \}
+\\ \\
+$\lhd$ is a domain restriction operator that selects pairs from the database table (in this case from laptops database table) based on the first element. \\
+ 
+\item laptops $\rhd$ \{ lenovo, hp \} = \\
+\{legion5 $\mapsto$ lenovo, \\
+spectre $\mapsto$ hp, \\
+dragonfly $\mapsto$ hp, \\
+envyx360 $\mapsto$ hp \}
+\\ \\
+$\rhd$ is a range restriction operator that selects pairs from the database table (in this case from laptops database table) based on the second element. \\
+
+\item \{ legion5, xps15, xps13, dragonfly \} $\ndres$  laptops = \\
+\{macbookair $\mapsto$ apple, \\
+spectre $\mapsto$ hp, \\
+swift3 $\mapsto$ acer, \\
+macbookpro $\mapsto$ apple, \\
+envyx360 $\mapsto$ hp \}
+\\ \\
+$\ndres$ is a domain subtraction operator that removes all pairs based on the first element (the domain of the element). In other words, it removes all pairs where model is anything specified within the brackets. \\
+
+\item laptops $\nrres$ \{ apple, dell, hp \} = \\
+\{legion5 $\mapsto$ lenovo, \\
+swift3 $\mapsto$ acer \}
+\\ \\
+$\nrres$ is a range subtraction operator that removes all pairs based on the second element (the range of the relation). In other words, it removes all pairs where the brand is anything specified within the brackets. \\
+
+\item 
+\begin {enumerate} 
+\item laptop $\oplus$ \{ ideapad $\mapsto$ lenovo \} = \\
+\{ legion5 $\mapsto$ lenovo, \\
+macbookair $\mapsto$ apple, \\
+xps15 $\mapsto$ dell, \\
+spectre $\mapsto$ hp, \\
+xps13 $\mapsto$ dell, \\
+swift3 $\mapsto$ acer, \\
+macbookpro $\mapsto$ apple, \\
+dragonfly $\mapsto$ hp, \\
+envyx360 $\mapsto$ hp, \\
+ideapad $\mapsto$ lenovo\} \\
+
+\item $\oplus$ is an insertion operator used in model database updates for relational overriding. Therefore, the specified element within the bracket is added to the already existing laptop set. \\
+
+\item The result will not have a permanent effect on the database, because this us just an  evaluation of the expression. To ensure a permanent effect, this expression must be used in an assignment statement where a variable (laptops') hold the state of the set upon successful evaluation of the right-hand side expression: \\
+laptops' = laptops $\oplus$ \{ ideapad $\mapsto$ lenovo \}
+\end{enumerate}
+
+\end{enumerate}
+
