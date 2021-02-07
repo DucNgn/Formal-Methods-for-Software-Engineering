@@ -27,17 +27,17 @@ Consider sets $A = \{1, 2, 3, 4, 5, 6 \}$ and $B = \{ a, b, c, d, e, f \}$.
 \hline
 		& Inective		& Surjective	& Bijective 	& \multicolumn{1}{m{3cm}|}{Neither injective nor surjective}	&	Not a function	\\
 \hline
-(a)		& 		& 		& 	& 			&  \\
+(a)		& 		& 		& 	& 			&$\checkmark$  \\
 \hline
 
-(b)		& 		& 		& 		& 	&	 \\
+(b)		& 		& 		& 		& $\checkmark$	&	 \\
 \hline
 
 
-(c)		& 		& 		& 		& 	&  \\
+(c)		& 		& 		& 	& $\checkmark$	&  \\
 \hline
 
-(d)		& 		& 		& 		&	&  \\
+(d)		& 		& 		&$\checkmark$ 		&	&  \\
 \hline
 \end{tabular}
 \end{center}
@@ -47,3 +47,19 @@ Consider sets $A = \{1, 2, 3, 4, 5, 6 \}$ and $B = \{ a, b, c, d, e, f \}$.
 \end{enumerate}
 
 \subsection{Answer}
+
+\begin{enumerate}
+	\item See table above
+	\item A function from $A$ to $B$ is an assisgnment of each element of the domain to exactly one element of the codomain.
+	We know that a function is surjective if each of the elements of the codomain is mapped by at least one element of the domain.
+	\\
+	Therefore, if a function $f : A \rightarrow B$ is to be surjective, all elements of $A$ must point to one and only one 
+	element of $B$ (definition of a function) and all elements of $B$ must be pointed by at least one element of $A$ (definition
+	of a surjective function).
+	\\
+	Fianlly, we know that $A$ and $B$ have the same cardinality, namely 6. This yields that for $f$ to be surjective, all elements
+	of $B$ have to be pointed by exactly one element of $A$, making $f$ an injective function. 
+	\\
+	In conclusion, given sets $A$ and $B$, it is impossible for a function $f : A \rightarrow B$ to be surjective without
+	being injective.  
+\end{enumerate}
