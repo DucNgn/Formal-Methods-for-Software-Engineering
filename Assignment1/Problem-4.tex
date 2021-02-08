@@ -6,8 +6,8 @@ Consider list $\Lambda = \langle w, x, y, z \rangle$, deployed to implement a Qu
 \subsection{Enqueue and dequeue operations with head of list as front of queue}
 
 \begin{itemize}
-    \item[] enqueue(el, $\Lambda$):  $\Lambda$' = cons($\Lambda$, el)
-    \item[] dequeue($\Lambda$): $\Lambda$' = tail($\Lambda$)
+    \item[] enqueue(el, $\Lambda$):  $\Lambda$' = $\Lambda$ $\cup$ el
+    \item[] dequeue($\Lambda$): $\Lambda$' = $\Lambda$ \textbackslash \{$\Lambda_{1}$\}
 \end{itemize}
 
 \subsection{Let head of A correspond to the rear of Queue}
