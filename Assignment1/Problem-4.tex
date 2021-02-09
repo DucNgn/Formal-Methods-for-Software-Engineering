@@ -5,27 +5,36 @@ Consider list $\Lambda = \langle w, x, y, z \rangle$, deployed to implement a Qu
 
 \subsection{Enqueue and dequeue operations with head of list as front of queue}
 
+\subsubsection{enqueue(el, $\Lambda$)}
 \begin{itemize}
-    \item[] enqueue(el, $\Lambda$):  $\Lambda$' = $\Lambda$ $\cup$ el
-    \item[] dequeue($\Lambda$): $\Lambda$' = $\Lambda$ \textbackslash \{$\Lambda_{1}$\}
+    \item[] $\Lambda$' = concat($\Lambda$, list(el));
 \end{itemize}
+
+\subsubsection{dequeue($\Lambda$)}
+\begin{itemize}
+    \item element = head($\Lambda$);
+    \item $\Lambda$' = tail($\Lambda$);
+    \item[] where 'element' is the return value of the operation.
+\end{itemize}
+
+
 
 \subsection{Let head of A correspond to the rear of Queue}
 
 \subsubsection{cons(el, $\Lambda$)}
 \begin{enumerate}
     \item[] \textbf{Result:} $\langle el, w, x, y, z \rangle$
-    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$)
+    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$). Hence, it is acceptable since it implements the Queue protocol.
 \end{enumerate}
 
 \subsubsection{list(el, $\Lambda$)}
 \begin{enumerate}
     \item[] \textbf{Result:} $\langle el, \langle w, x, y, z \rangle \rangle$
-    \item[] It's \textbf{not} the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it creates list containing A as a list inside.
+    \item[] It's \textbf{not} the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it creates list containing A as a list inside. Hence, it is not acceptable because it does not implement the Queue protocol.
 \end{enumerate}
 
 \subsubsection{concat(list(el), $\Lambda$)}
 \begin{enumerate}
     \item[] \textbf{Result:} $\langle el, w, x, y, z \rangle$
-    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$)
+    \item[] It's the correct implementation for operation \texttt{enqueue(el $\Lambda$)} since it adds the new element to the rear of the queue (head of $\Lambda$). Hence, it is acceptable since it implements the Queue protocol.
 \end{enumerate}
