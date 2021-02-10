@@ -54,7 +54,7 @@ laptops = \\
 
 \item Consider the following expression
 
-\[ laptop \oplus \{ ideapad \mapsto lenovo \} \]
+\[ laptops \oplus \{ ideapad \mapsto lenovo \} \]
 
 \begin{enumerate}
 \item What is the result of the expression?
@@ -81,7 +81,7 @@ xps13 $\mapsto$ dell, \\
 swift3 $\mapsto$ acer, \\
 envyx360 $\mapsto$ hp \}
 \\ \\
-$\lhd$ is a domain restriction operator that selects pairs from the database table (in this case from laptops database table) based on the first element. \\
+$\lhd$ is a domain restriction operator that selects pairs from the database table (in this case from laptops database table) based on the first element. Such operator is deployed in the database management system for query operation. It is specifically a select query (a data retrieval query).\\
  
 \item laptops $\rhd$ \{ lenovo, hp \} = \\
 \{legion5 $\mapsto$ lenovo, \\
@@ -89,7 +89,7 @@ spectre $\mapsto$ hp, \\
 dragonfly $\mapsto$ hp, \\
 envyx360 $\mapsto$ hp \}
 \\ \\
-$\rhd$ is a range restriction operator that selects pairs from the database table (in this case from laptops database table) based on the second element. \\
+$\rhd$ is a range restriction operator that selects pairs from the database table (in this case from laptops database table) based on the second element. As previously mentioned, this is also deployed in database management for query operation (specifically a select query used for data retrieval query). \\
 
 \item \{ legion5, xps15, xps13, dragonfly \} $\ndres$  laptops = \\
 \{macbookair $\mapsto$ apple, \\
@@ -98,17 +98,17 @@ swift3 $\mapsto$ acer, \\
 macbookpro $\mapsto$ apple, \\
 envyx360 $\mapsto$ hp \}
 \\ \\
-$\ndres$ is a domain subtraction operator that removes all pairs based on the first element (the domain of the element). In other words, it removes all pairs where model is anything specified within the brackets. \\
+$\ndres$ is a domain subtraction operator that removes all pairs based on the first element (the domain of the element). In other words, it removes all pairs where model is anything specified within the brackets. This is also a query operation (more specifically an action query) where additional operation (such as a deletion in this case) is applied on  the data.\\
 
 \item laptops $\nrres$ \{ apple, dell, hp \} = \\
 \{legion5 $\mapsto$ lenovo, \\
 swift3 $\mapsto$ acer \}
 \\ \\
-$\nrres$ is a range subtraction operator that removes all pairs based on the second element (the range of the relation). In other words, it removes all pairs where the brand is anything specified within the brackets. \\
+$\nrres$ is a range subtraction operator that removes all pairs based on the second element (the range of the relation). In other words, it removes all pairs where the brand is anything specified within the brackets. This is an action query, where a deletion (in this case) is applied on the data.\\
 
 \item 
 \begin {enumerate} 
-\item laptop $\oplus$ \{ ideapad $\mapsto$ lenovo \} = \\
+\item laptops $\oplus$ \{ ideapad $\mapsto$ lenovo \} = \\
 \{ legion5 $\mapsto$ lenovo, \\
 macbookair $\mapsto$ apple, \\
 xps15 $\mapsto$ dell, \\
@@ -120,9 +120,9 @@ dragonfly $\mapsto$ hp, \\
 envyx360 $\mapsto$ hp, \\
 ideapad $\mapsto$ lenovo\} \\
 
-\item $\oplus$ is an insertion operator used in model database updates for relational overriding. Therefore, the specified element within the bracket is added to the already existing laptop set. \\
+\item $\oplus$ is an insertion operator used in model database updates for relational overriding. Therefore, the specified element within the bracket is added to the already existing laptop set. Such operator is deployed in the database management system for query operation, specifically an action query, where (in this case) the action is an insertion of data to the existing database.  \\
 
-\item The result will not have a permanent effect on the database, because this us just an  evaluation of the expression. To ensure a permanent effect, this expression must be used in an assignment statement where a variable (laptops') hold the state of the set upon successful evaluation of the right-hand side expression: \\
+\item The result will not have a permanent effect on the database, because this us just an  evaluation of the expression. To ensure a permanent effect, the result of this expression must be assigned to a variable (laptops') which will hold the state of the set upon successful evaluation of the right-hand side expression: \\
 laptops' = laptops $\oplus$ \{ ideapad $\mapsto$ lenovo \}
 \end{enumerate}
 
