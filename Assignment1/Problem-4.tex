@@ -1,7 +1,23 @@
 \newpage
 
 \section{Problem 4 (12 pts)}
+
+\subsection{Description:}
+
 Consider list $\Lambda = \langle w, x, y, z \rangle$, deployed to implement a Queue Abstract Data Type.
+
+\begin{enumerate}
+
+\item Let the head of $\Lambda$ correspond to the front position of the Queue. Implement operations \texttt{enqueue(el, $\Lambda$)} and \texttt{dequeue($\Lambda$)} using list construction operations. In both cases we can refer to $\Lambda'$ as the state of the list upon successful termination of one of its operations.
+
+\item Let us now reverse the way we manipulate our data structure and let the head of $\Lambda$ correspond to the rear of the Queue.
+\begin{enumerate}
+\item What would be the result of $cons(el, \Lambda)$, and would it be a correct implementation for operation \texttt{enqueue(el, $\Lambda$)}?
+\item What would be the result of $list(el, \Lambda)$, and would it be a correct implementation for operation \texttt{enqueue(el, $\Lambda$)}?
+\item What would be the result of $concat(list(el), \Lambda)$, and would it be a correct implementation for operation \texttt{enqueue(el, $\Lambda$)}?
+\end{enumerate}
+\end{enumerate}
+
 
 \subsection{Enqueue and dequeue operations with head of list as front of queue}
 
