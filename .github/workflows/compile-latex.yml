@@ -11,15 +11,19 @@ on:
 
 jobs:
   build_latex:
-    name: Compile LaTeX document for assignments
+    name: Compile LaTeX document for assignment ${{ matrix.assignment_no }}
     runs-on: ubuntu-18.04
+
+    strategy:
+        matrix:
+            assignment_no: [1, 2]
     
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Compile LaTeX document for Assignment 1
+      - name: Compile LaTeX document 
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          working_directory: Assignment1
+          working_directory: Assignment${{ matrix.assignment_no }}
