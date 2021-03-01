@@ -13,3 +13,42 @@ following \textit{robust specifications}:
 \end{itemize}
 
 \subsection{Answer:}
+
+\begin{class}{Contacts}
+\also
+\upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
+\begin{state}
+numbers: \mathbb{P} PhoneNumberType\\
+recorded : NameType \pfun PhoneNumberType\\
+\where
+numbers = ran~recorded
+\end{state} \\
+\begin{init}
+recorded = \emptyset %\{ \}
+\end{init} \\
+\begin{op}{MakeNewContactOK}
+\Delta () \\
+\ST
+\end{op}\\
+\begin{op}{AddNumberOK}
+\Delta () \\
+\ST
+\end{op}\\
+\begin{op}{SearchForNumberOK}
+\Delta () \\
+\ST
+\end{op}\\
+\begin{op}{DeleteNumberOK}
+\Delta () \\
+\ST
+\end{op}\\
+\begin{op}{Success}
+\Delta () \\
+\ST
+\end{op}\\ %need to add more exception handling cases
+\also
+MakeNewContact =\\
+AddNumber = \\
+SearchForNumber = \\
+DeleteNumber =
+\end{class}
