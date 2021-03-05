@@ -19,7 +19,7 @@ following \textit{robust specifications}:
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
 numbers: \mathbb{P} PhoneNumberType\\
-recorded : NameType \pfun PhoneNumberType\\
+recorded : PhoneNumberType \rightarrow NameType\\
 \where
 numbers = ran~recorded
 \end{state} \\
@@ -35,7 +35,7 @@ recorded = \emptyset %\{ \}
 \ST
 \end{op}\\
 \begin{op}{SearchForNumberOK}
-\Delta () \\
+\Xi () \\
 \ST
 \end{op}\\
 \begin{op}{DeleteNumberOK}
