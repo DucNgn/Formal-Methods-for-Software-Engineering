@@ -18,8 +18,8 @@ following \textit{robust specifications}:
 \also
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
-numbers: \mathbb{P}~PhoneNumberType\\
-recorded : NameType \pfun PhoneNumberType\\
+numbers: \mathbb{P} PhoneNumberType\\
+recorded : PhoneNumberType \rightarrow NameType\\
 \where
 numbers = dom~recorded
 \end{state} \\
@@ -40,7 +40,7 @@ recorded' = recorded \cup \{number? \mapsto name? \}
 \ST
 \end{op}\\
 \begin{op}{SearchForNumberOK}
-\Delta () \\
+\Xi () \\
 \ST
 \end{op}\\
 \begin{op}{DeleteNumberOK}
