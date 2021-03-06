@@ -35,9 +35,13 @@ recorded = \emptyset %\{ \}
 \ST
 \end{op}\\
 \begin{op}{SearchForNumberOK}
-\Xi () \\
-\ST
-\end{op}\\
+    \Xi (recorded) \\
+    name? : NameType\\
+    number! : \mathbb{P} PhoneNumberType
+    \ST
+    name? \in Name\\
+    number! = recorded(name?)
+    \end{op}\\
 \begin{op}{DeleteNumberOK}
 \Delta () \\
 \ST
@@ -49,6 +53,6 @@ recorded = \emptyset %\{ \}
 \also
 MakeNewContact =\\
 AddNumber = \\
-SearchForNumber = \\
+SearchForNumber \sdef (SearchForNumberOK \wedge Success) \vee \neg NameExists \\
 DeleteNumber =
 \end{class}
