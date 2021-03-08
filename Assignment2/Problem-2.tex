@@ -39,9 +39,9 @@ recorded = \emptyset %\{ \}
     name? : NameType\\
     number! : \mathbb{P} PhoneNumberType
     \ST
-    name? \in Name\\
-    number! = recorded(name?)
-    \end{op}\\
+    name? \in ran~recorded\\
+    number! = \{x:numbers  \mid recorded(x) = name?\}
+\end{op}\\
 \begin{op}{DeleteNumberOK}
 \Delta () \\
 \ST
