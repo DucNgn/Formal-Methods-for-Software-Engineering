@@ -36,14 +36,16 @@ enforce? Explain in detail.
     $\{ \forall x, y: numbers | (x \in numbers \wedge y \in numbers) \rightarrow x \neq y \}$
     \item
     \item
-    \item As previously stated, the domain of \emph{recorded} is \emph{Numbers}. We know that \emph{Numbers} is the set 
+    \item As previously stated, the domain of \emph{recorded} is \emph{numbers}. We know that \emph{numbers} is the set 
     of all phone numbers recorded in contacts. Since not all elements of \emph{PhoneNumberType} are recorded, we can
-    state that \emph{Numbers} is a subset of \emph{PhoneNumberType} as shown in the diagram displayed at \underline{question 1}.
+    state that \emph{numbers} is a subset of \emph{PhoneNumberType} as shown in the diagram displayed at \underline{question 1}.
     A partial function \emph{f} is a function that is defined for some subset \emph{A'} of \emph{A}, not forcing mapping for 
     all elements of set A such that $dom f \subset A$. Thus, \emph{recorded} is a partial function.
-    \item We know that each element of \emph{Name} (the codomain) has to be associated with at least one element of 
-    \emph{Numbers} (the domain). We also know that a name can be associated with multiple phone numbers. This type of 
-    function is described as a surjective function. 
+    \item Given the definition of an injective function ($\forall a, b | a \neq b \rightarrow f(a) \neq f(b) $), since multiple 
+    elements of \emph{numbers} can be associated with a single element of \emph{NameType}, then recorded is not injective. Also, 
+    given the definition of a surjective function ($\forall b,   \exists a | f(a) = b$), since not all elements of \emph{NameType} 
+    are mapped to by at least one element of \emph{numbers}, \emph{recorded} is also not a surjective function. Since it is 
+    neither injective nor surjective, recorded cannot be bijective. Therefore, \emph{recorded} is not one-to-one and not onto. 
     \item The function \emph{recorded} can be formally defined as:\\
-    $\{ \forall y \in \emph{Name},   \exists x \in \emph{Numbers} | recorded(x) = y \}$
+    $\{ \exists y \in \emph{NameType},   \exists x \in \emph{numbers} | recorded(x) = y \}$
 \end{enumerate}

@@ -19,7 +19,7 @@ following \textit{robust specifications}:
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
 numbers: \mathbb{P} PhoneNumberType\\
-recorded : PhoneNumberType \psur NameType\\
+recorded : PhoneNumberType \pfun NameType\\
 \where
 numbers = dom~recorded
 \end{state} \\
@@ -45,7 +45,7 @@ recorded' = recorded \cup \{number? \mapsto name? \}
     number! : \mathbb{P} PhoneNumberType
     \ST
     name? \in ran~recorded\\
-    number! = \{x:Numbers  \mid recorded(x) = name?\}
+    number! = \{x:numbers  \mid recorded(x) = name?\}
 \end{op}\\
 \begin{op}{DeleteNumberOK}
 \Delta () \\
