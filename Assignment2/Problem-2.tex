@@ -19,7 +19,7 @@ following \textit{robust specifications}:
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
 numbers: \mathbb{P} PhoneNumberType\\
-recorded : PhoneNumberType \pfun NameType\\
+recorded : PhoneNumberType \psur NameType\\
 \where
 numbers = ran~recorded
 \end{state} \\
@@ -51,8 +51,8 @@ recorded = \emptyset %\{ \}
 \ST
 \end{op}\\ %need to add more exception handling cases
 \also
-MakeNewContact =\\
-AddNumber = \\
+MakeNewContact \sdef\\
+AddNumber \sdef \\
 SearchForNumber \sdef (SearchForNumberOK \wedge Success) \vee \neg NameExists \\
-DeleteNumber =
+DeleteNumber \sdef
 \end{class}
