@@ -21,14 +21,19 @@ following \textit{robust specifications}:
 numbers: \mathbb{P} PhoneNumberType\\
 recorded : PhoneNumberType \psur NameType\\
 \where
-numbers = ran~recorded
+numbers = dom~recorded
 \end{state} \\
 \begin{init}
 recorded = \emptyset %\{ \}
 \end{init} \\
 \begin{op}{MakeNewContactOK}
-\Delta () \\
+\Delta (recorded) \\
+number?: PhoneNumberType \\
+name?: NameType \\
 \ST
+number? \notin numbers \\
+name? \notin ran~recorded \\
+recorded' = recorded \cup \{number? \mapsto name? \}
 \end{op}\\
 \begin{op}{AddNumberOK}
 \Delta () \\
@@ -47,11 +52,27 @@ recorded = \emptyset %\{ \}
 \ST
 \end{op}\\
 \begin{op}{Success}
-\Delta () \\
+response!: Message \\
 \ST
-\end{op}\\ %need to add more exception handling cases
+response! = 'ok'
+\end{op}\\
+\begin{op}{NumberExists}
+number?: PhoneNumberType \\
+response!: Message \\
+\ST
+number? \in numbers \\
+response! = 'Number~already~exists'
+\end{op}\
+\zbreak
+\begin{op}{NameExists}
+name?: NameType \\
+response!: Message \\
+\ST
+name? \in ran~recorded \\
+response! = 'Name~already~taken'
+\end{op}\
 \also
-MakeNewContact \sdef\\
+MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
 AddNumber \sdef \\
 SearchForNumber \sdef (SearchForNumberOK \wedge Success) \vee \neg NameExists \\
 DeleteNumber \sdef
