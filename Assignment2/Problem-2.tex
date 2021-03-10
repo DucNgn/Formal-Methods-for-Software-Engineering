@@ -27,13 +27,14 @@ numbers = dom~recorded
 recorded = \emptyset %\{ \}
 \end{init} \\
 \begin{op}{MakeNewContactOK}
-\Delta (recorded) \\
+\Delta (recorded, numbers) \\
 number?: PhoneNumberType \\
 name?: NameType \\
 \ST
 number? \notin numbers \\
 name? \notin ran~recorded \\
-recorded' = recorded \cup \{number? \mapsto name? \}
+recorded' = recorded \cup \{number? \mapsto name? \}\\
+numbers' = numbers \cup \{number?\} \\
 \end{op}\\
 \begin{op}{AddNumberOK}
 \Delta () \\
