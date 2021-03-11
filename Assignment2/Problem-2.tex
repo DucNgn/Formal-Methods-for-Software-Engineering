@@ -52,7 +52,8 @@ recorded' = recorded \cup \{number? \mapsto name? \}
 number? : PhoneNumberType\\
 \ST
 number? \in numbers\\
-recorded' = \{number?\} \ndres recorded
+recorded' = \{number?\} \ndres recorded\\
+numbers' = numbers \backslash \{number?\}\\
 \end{op}\\
 \begin{op}{Success}
 response!: Message \\
