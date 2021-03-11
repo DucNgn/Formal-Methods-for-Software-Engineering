@@ -70,10 +70,17 @@ response!: Message \\
 \ST
 name? \in ran~recorded \\
 response! = 'Name~already~taken'
-\end{op}\
+\end{op}\\
+\begin{op}{NameNotFound}
+    name?: NameType \\
+    response!: Message \\
+    \ST
+    name? \notin ran~recorded \\
+    response! = 'Name~not~found'
+\end{op}\\
 \also
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
 AddNumber \sdef \\
-SearchForNumber \sdef (SearchForNumberOK \wedge Success) \vee \neg NameExists \\
+SearchForNumber \sdef (SearchForNumberOK \wedge Success) \vee NameNotFound \\
 DeleteNumber \sdef
 \end{class}
