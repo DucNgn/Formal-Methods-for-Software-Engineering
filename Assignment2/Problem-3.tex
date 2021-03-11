@@ -16,11 +16,10 @@ Contacts\\
  recorded : PhoneNumberType \pfun NameType
 \end{state} \\
 \begin{op}{SearchForPersonOK}
-\Xi (recorded) \\
-name? : NameType\\
-number! : PhoneNumberType
+number? : PhoneNumberType \\
+name! : NameType\\
 \ST
-number? \in recorded\\
+number? \in numbers\\
 name! = recorded(number?)
 \end{op}\\
 \also

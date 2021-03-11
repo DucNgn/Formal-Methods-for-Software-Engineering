@@ -48,21 +48,16 @@ recorded' = recorded \cup \{number? \mapsto name? \}
     number! = \{x:numbers  \mid recorded(x) = name?\}
 \end{op}\\
 \begin{op}{DeleteNumberOK}
-\Delta (recorded) \\
+\Delta (recorded, numbers) \\
 number? : PhoneNumberType\\
 \ST
-number? \in ran~recorded\\
-recorded' = recorded \ndres \{name? \mapsto number?  \}
+number? \in numbers\\
+recorded' = \{number?\} \ndres recorded
 \end{op}\\
 \begin{op}{Success}
 response!: Message \\
 \ST
 response! = 'Success'
-\end{op}\\
-\begin{op}{Error}
-response!: Message\\
-\ST
-response! =  'Error'\\
 \end{op}\\
 \zbreak
 \begin{op}{NumberExists}
