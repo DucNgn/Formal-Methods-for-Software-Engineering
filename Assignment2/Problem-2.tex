@@ -16,18 +16,22 @@ following \textit{robust specifications}:
 
 \begin{class}{Contacts}
 \also
-\upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
+\upharpoonright(MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
 numbers: \mathbb{P} PhoneNumberType\\
-recorded : PhoneNumberType \pfun NameType\\
+recorded: PhoneNumberType \pfun NameType\\
 \where
 numbers = dom~recorded
 \end{state} \\
-% INIT SECTION %
+%                           %
+% INIT SECTION              %
+%                           %
 \begin{init}
-recorded = \emptyset %\{ \}
+recorded = \emptyset
 \end{init} \\
-% MakeNewContactOK  SECTION%
+%                           %
+% MakeNewContactOK  SECTION %
+%                           %
 \begin{op}{MakeNewContactOK}
 \Delta (recorded, numbers) \\
 number?: PhoneNumberType \\
@@ -38,7 +42,9 @@ name? \notin ran~recorded \\
 recorded' = recorded \cup \{number? \mapsto name? \}\\
 numbers' = numbers \cup \{number?\} \\
 \end{op}\\
-% AddNumberOK SECTION %
+%                           %
+% AddNumberOK SECTION       %
+%                           %
 \begin{op}{AddNumberOK}
 \Delta (recorded, numbers) \\
 number?: PhoneNumberType \\
@@ -49,6 +55,9 @@ name? \in ran~recorded \\
 recorded' = recorded \cup \{number? \mapsto name?\} \\
 numbers' = numbers \cup \{number?\} \\
 \end{op}\\
+%                           %
+% SearchForNumberOK SECTION %
+%                           %
 \begin{op}{SearchForNumberOK}
     \Xi (recorded) \\
     name? : NameType\\
@@ -57,6 +66,9 @@ numbers' = numbers \cup \{number?\} \\
     name? \in ran~recorded\\
     number! = \{x:numbers  \mid recorded(x) = name?\}
 \end{op}\\
+%                           %
+% DeleteNumberOK SECTION    %
+%                           %
 \begin{op}{DeleteNumberOK}
 \Delta (recorded, numbers) \\
 number? : PhoneNumberType\\
@@ -66,41 +78,57 @@ recorded' = \{number?\} \ndres recorded\\
 numbers' = numbers \backslash \{number?\}\\
 \end{op}\\
 \zbreak
+%                           %
+% Success SECTION           %
+%                           %
 \begin{op}{Success}
 response!: Message \\
 \ST
-response! = 'Success'
+response! = `Success '
 \end{op}\\
+%                           %
+% NumberExists SECTION      %
+%                           %
 \begin{op}{NumberExists}
 number?: PhoneNumberType \\
 response!: Message \\
 \ST
 number? \in numbers \\
-response! = 'Number~already~exists'
+response! = `Number~already~exists'
 \end{op}\\
+%                           %
+% NumberNotFound SECTION    %
+%                           %
 \begin{op}{NumberNotFound}
 number?: PhoneNumberType \\
 response!: Message \\
 \ST
 number? \notin numbers \\
-response! = 'Number~not~found'
+response! = `Number~not~found'
 \end{op}\\
+%                           %
+% NameExists SECTION        %
+%                           %
 \begin{op}{NameExists}
 name?: NameType \\
 response!: Message \\
 \ST
 name? \in ran~recorded \\
-response! = 'Name~already~taken'
+response! = `Name~already~taken'
 \end{op}\\
-\also
+%                           %
+% NameNotFound SECTION      %
+%                           %
 \begin{op}{NameNotFound}
     name?: NameType \\
     response!: Message \\
     \ST
     name? \notin ran~recorded \\
-    response! = 'Name~not~found'
+    response! = `Name~not~found'
 \end{op}\\
-\also
+%                           %
+% METHODS                   %
+%                           %
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
 AddNumber \sdef (AddNumberOK \wedge Success) \oplus (NumberExists \lor NameNotFound) \\
 SearchForNumber \sdef (SearchForNumberOK \wedge Success) \oplus NameNotFound \\
