@@ -23,9 +23,11 @@ recorded : PhoneNumberType \pfun NameType\\
 \where
 numbers = dom~recorded
 \end{state} \\
+% INIT SECTION %
 \begin{init}
 recorded = \emptyset %\{ \}
 \end{init} \\
+% MakeNewContactOK  SECTION%
 \begin{op}{MakeNewContactOK}
 \Delta (recorded, numbers) \\
 number?: PhoneNumberType \\
@@ -36,9 +38,16 @@ name? \notin ran~recorded \\
 recorded' = recorded \cup \{number? \mapsto name? \}\\
 numbers' = numbers \cup \{number?\} \\
 \end{op}\\
+% AddNumberOK SECTION %
 \begin{op}{AddNumberOK}
-\Delta () \\
+\Delta (recorded, numbers) \\
+number?: PhoneNumberType \\
+name?: NameType
 \ST
+number? \notin numbers \\
+name? \in ran~recorded \\
+recorded' = recorded \cup \{number? \mapsto name?\} \\
+numbers' = numbers \cup \{number?\} \\
 \end{op}\\
 \begin{op}{SearchForNumberOK}
     \Xi (recorded) \\
@@ -69,6 +78,7 @@ response!: Message \\
 number? \in numbers \\
 response! = 'Number~already~exists'
 \end{op}\\
+\zbreak
 \begin{op}{NumberNotFound}
 number?: PhoneNumberType \\
 response!: Message \\
@@ -83,6 +93,7 @@ response!: Message \\
 name? \in ran~recorded \\
 response! = 'Name~already~taken'
 \end{op}\\
+\also
 \begin{op}{NameNotFound}
     name?: NameType \\
     response!: Message \\
@@ -92,7 +103,7 @@ response! = 'Name~already~taken'
 \end{op}\\
 \also
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
-AddNumber \sdef \\
+AddNumber \sdef (AddNumberOK \wedge Success) \oplus (NumberExists \lor NameNotFound) \\
 SearchForNumber \sdef (SearchForNumberOK \wedge Success) \oplus NameNotFound \\
 DeleteNumber \sdef (DeleteNumberOK \wedge Success ) \oplus NumberNotFound  \\
 \end{class}
