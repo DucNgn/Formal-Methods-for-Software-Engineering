@@ -16,6 +16,7 @@ Contacts\\
  recorded : PhoneNumberType \pfun NameType
 \end{state} \\
 \begin{op}{SearchForPersonOK}
+\Xi (recorded) \\
 number? : PhoneNumberType \\
 name! : NameType\\
 \ST
@@ -25,4 +26,3 @@ name! = recorded(number?)
 \also
 SearchForPerson \sdef ( SearchForPersonOK \land Success ) \oplus NumberNotFound\\
 \end{class}
-
