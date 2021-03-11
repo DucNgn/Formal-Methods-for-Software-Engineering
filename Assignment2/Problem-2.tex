@@ -65,12 +65,12 @@ number? \in numbers\\
 recorded' = \{number?\} \ndres recorded\\
 numbers' = numbers \backslash \{number?\}\\
 \end{op}\\
+\zbreak
 \begin{op}{Success}
 response!: Message \\
 \ST
 response! = 'Success'
 \end{op}\\
-\zbreak
 \begin{op}{NumberExists}
 number?: PhoneNumberType \\
 response!: Message \\
@@ -78,7 +78,6 @@ response!: Message \\
 number? \in numbers \\
 response! = 'Number~already~exists'
 \end{op}\\
-\zbreak
 \begin{op}{NumberNotFound}
 number?: PhoneNumberType \\
 response!: Message \\
