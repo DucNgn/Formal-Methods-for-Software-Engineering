@@ -19,7 +19,7 @@ following \textit{robust specifications}:
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber) \\
 \begin{state}
 numbers: \mathbb{P} PhoneNumberType\\
-recorded : PhoneNumberType \rightarrow NameType\\
+recorded : PhoneNumberType \pfun NameType\\
 \where
 numbers = dom~recorded
 \end{state} \\
@@ -41,8 +41,12 @@ numbers' = numbers \cup \{number?\} \\
 \ST
 \end{op}\\
 \begin{op}{SearchForNumberOK}
-\Xi () \\
-\ST
+    \Xi (recorded) \\
+    name? : NameType\\
+    number! : \mathbb{P} PhoneNumberType
+    \ST
+    name? \in ran~recorded\\
+    number! = \{x:numbers  \mid recorded(x) = name?\}
 \end{op}\\
 \begin{op}{DeleteNumberOK}
 \Delta () \\
@@ -67,10 +71,17 @@ response!: Message \\
 \ST
 name? \in ran~recorded \\
 response! = 'Name~already~taken'
-\end{op}\
+\end{op}\\
+\begin{op}{NameNotFound}
+    name?: NameType \\
+    response!: Message \\
+    \ST
+    name? \notin ran~recorded \\
+    response! = 'Name~not~found'
+\end{op}\\
 \also
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
 AddNumber \sdef \\
-SearchForNumber \sdef \\
+SearchForNumber \sdef (SearchForNumberOK \wedge Success) \oplus NameNotFound \\
 DeleteNumber \sdef
 \end{class}
