@@ -78,7 +78,7 @@ response! = 'Name~already~taken'
 \end{op}\\
 \also
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
-AddNumber \sdef (AddNumberOK \wedge Success) \oplus (NumberExists \lor \neg NameExists) \\
+AddNumber \sdef (AddNumberOK \wedge Success) \oplus (NumberExists \lor NameNotFound) \\
 SearchForNumber \sdef \\
 DeleteNumber \sdef
 \end{class}
