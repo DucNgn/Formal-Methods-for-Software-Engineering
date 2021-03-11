@@ -48,22 +48,37 @@ recorded' = recorded \cup \{number? \mapsto name? \}
     number! = \{x:numbers  \mid recorded(x) = name?\}
 \end{op}\\
 \begin{op}{DeleteNumberOK}
-\Delta () \\
+\Delta (recorded) \\
+number? : PhoneNumberType\\
 \ST
+number? \in ran~recorded\\
+recorded' = recorded \ndres \{name? \mapsto number?  \}
 \end{op}\\
 \begin{op}{Success}
 response!: Message \\
 \ST
-response! = 'ok'
+response! = 'Success'
 \end{op}\\
+\begin{op}{Error}
+response!: Message\\
+\ST
+response! =  'Error'\\
+\end{op}\\
+\zbreak
 \begin{op}{NumberExists}
 number?: PhoneNumberType \\
 response!: Message \\
 \ST
 number? \in numbers \\
 response! = 'Number~already~exists'
-\end{op}\
-\zbreak
+\end{op}\\
+\begin{op}{NumberNotFound}
+number?: PhoneNumberType \\
+response!: Message \\
+\ST
+number? \notin numbers \\
+response! = 'Number~not~found'
+\end{op}\\
 \begin{op}{NameExists}
 name?: NameType \\
 response!: Message \\
@@ -82,5 +97,5 @@ response! = 'Name~already~taken'
 MakeNewContact \sdef (MakeNewContactOK \wedge Success) \oplus (NumberExists \lor NameExists) \\
 AddNumber \sdef \\
 SearchForNumber \sdef (SearchForNumberOK \wedge Success) \oplus NameNotFound \\
-DeleteNumber \sdef
+DeleteNumber \sdef (DeleteNumberOK \wedge Success ) \oplus NumberNotFound  \\
 \end{class}

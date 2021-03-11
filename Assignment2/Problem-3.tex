@@ -12,10 +12,18 @@ operation \textbf{SearchForPerson}.
 \also
 \upharpoonright (MakeNewContact, AddNumber, SearchForNumber, DeleteNumber,\\ SearchForPerson) \\
 Contacts\\
+\begin{state}
+ recorded : PhoneNumberType \pfun NameType
+\end{state} \\
 \begin{op}{SearchForPersonOK}
-\Xi () \\
+\Xi (recorded) \\
+name? : NameType\\
+number! : PhoneNumberType
 \ST
+number? \in recorded\\
+name! = recorded(number?)
 \end{op}\\
 \also
-SearchForPerson \sdef 
+SearchForPerson \sdef ( SearchForPersonOK \land Success ) \oplus NumberNotFound\\
 \end{class}
+
