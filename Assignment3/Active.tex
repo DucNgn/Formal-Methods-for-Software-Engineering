@@ -1,0 +1,34 @@
+\newpage
+\section{Formal Specifications for Active}
+
+\subsection{Mathematical Representation}
+
+\noindent The EFSM of the metro passageway is the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
+
+\noindent $Q = \{Start Setting, Setting, Setting Complete, Washing, Rinse, Spin\}$\\
+\noindent $\Sigma_1 = \{cancel, press Button for Cycle Type, set Program, washing Complete, after(3 mins), after(2 mins)\}$\\
+\noindent $\Sigma_2 = \{lock Door, unlock Door\}$\\
+\noindent $q_0: Setting$\\
+\noindent $V: door = \{open, closed\}$\\
+\noindent $\Lambda$: Transition specifications\\
+\indent 1. $\rightarrow Start Setting$\\
+\indent 2. $Start Setting \rightarrow Setting$\\
+\indent 3. $Setting \xrightarrow {\text {cancel}} Start Setting$\\
+\indent 4. $Setting \xrightarrow {\text {press button for cycle type}} Setting Complete$\\
+\indent 5. $Setting Complete \xrightarrow {\text {program set [door is closed] / lock door}} Washing$\\
+\indent 6. $Washing \xrightarrow {\text {washing complete}} Rinse$\\
+\indent 7. $Rinse \xrightarrow {\text {after(3min)}} Spin$\\
+\indent 8. $Spin \xrightarrow {\text {after(2min) / unlock door}} Exit$\\
+
+\noindent The UML state diagram is shown in Figure~\ref{fig:Active}.
+
+\newpage
+
+\subsection{UML state diagrams}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./figures/eps/metro.eps}
+		  \caption{Washing Machine.}
+  \label{fig:Active}
+\end{figure}

@@ -1,0 +1,32 @@
+\newpage
+\section{Formal Specifications for Washing Machine}
+
+\subsection{Mathematical Representation}
+
+\noindent The EFSM of the metro passageway is the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
+
+\noindent $Q = \{Off, On, Operating\}$\\
+\noindent $\Sigma_1 = \{turn on, after(10sec), shut down\}$\\
+\noindent $\Sigma_2 = \{operating Lights Blink, beep, long Beep, operating Lights Off\}$\\
+\noindent $q_0: Off$\\
+\noindent $V: \emptyset$\\
+\noindent $\Lambda$: Transition specifications\\
+\indent 1. $\rightarrow Off$\\
+\indent 2. $Off \xrightarrow {\text { turnOn}} On$\\
+\indent 3. $On \xrightarrow {\text { after(10sec) / operating Lights Blink; long Beep}} Operating$\\
+\indent 4. $Operating \xrightarrow {\text { shutDown / beep, operating lights off}} Off$\\
+
+\noindent The UML state diagram is shown in Figure~\ref{fig:metro-fig}.
+
+\newpage
+
+\subsection{UML state diagrams}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./figures/eps/metro.eps}
+		  \caption{Washing Machine.}
+  \label{fig:metro-fig}
+\end{figure}
+
+

@@ -1,0 +1,36 @@
+\newpage
+\section{Formal Specifications for Operating}
+
+\subsection{Mathematical Representation}
+
+\noindent The EFSM of the metro passageway is the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
+
+\noindent $Q = \{Idle, Active, StandBy, Servicing\}$\\
+\noindent $\Sigma_1 = \{press Finish, receive Start Signal, receive Service Signal, machine Fixed, power Out, power Back On, \\
+\indent cancel, completion\}$\\
+\noindent $\Sigma_2 = \emptyset$\\
+\noindent $q_0: Idle$\\
+\noindent $V: \emptyset$\\
+\noindent $\Lambda$: Transition specifications\\
+\indent 1. $\rightarrow Idle$\\
+\indent 2. $Idle \xrightarrow {\text {press finish}} Exit$\\
+\indent 3. $Idle \xrightarrow {\text {receive service signal}} Servicing$\\
+\indent 4. $Servicing \xrightarrow {\text {machine fixed}} Idle$\\
+\indent 5. $Idle \xrightarrow {\text {receive start signal}} Active$\\
+\indent 6. $Active \xrightarrow {\text {power out}} StandBy$\\
+\indent 7. $StandBy \xrightarrow {\text {power back on}} Active$\\
+\indent 8. $Active \xrightarrow {\text {cancel}} Idle$\\
+\indent 9. $Active \xrightarrow {\text {completion}} Idle$\\
+
+\noindent The UML state diagram is shown in Figure~\ref{fig:operating}.
+
+\newpage
+
+\subsection{UML state diagrams}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./figures/eps/metro.eps}
+		  \caption{Washing Machine.}
+  \label{fig:operating}
+\end{figure}
