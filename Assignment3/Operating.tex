@@ -1,12 +1,12 @@
 \newpage
-\section{Formal Specifications for Operating}
+\section{Operating Composite State}
 
 \subsection{Mathematical Representation}
 
-\noindent The EFSM of the metro passageway is the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
+\noindent As \textit{Operating} is a composite state, it is defined as the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
 
-\noindent $Q = \{Idle, Active, StandBy, Servicing\}$\\
-\noindent $\Sigma_1 = \{press Finish, receive Start Signal, receive Service Signal, machine Fixed, power Out, power Back On, \\
+\noindent $Q = \{Idle, Active, Stand~By, Servicing\}$\\
+\noindent $\Sigma_1 = \{press~finish, receive~start~signal, receive~service ~signal, machine~fixed, power~out, power~back~on, \\
 \indent cancel, completion\}$\\
 \noindent $\Sigma_2 = \emptyset$\\
 \noindent $q_0: Idle$\\
@@ -26,13 +26,11 @@
 
 \newpage
 
-\subsection{UML state diagrams}
+\subsection{State transition diagram}
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=0.8\textwidth]{./figures/eps/metro.eps}
-		  \caption{Washing Machine.}
+		\includegraphics[width=0.8\textwidth]{Operating}
+		  \caption{State Diagram of Operating State}
   \label{fig:operating}
 \end{figure}
-
-
