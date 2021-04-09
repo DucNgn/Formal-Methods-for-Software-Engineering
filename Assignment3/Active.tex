@@ -6,16 +6,16 @@
 \noindent As \textit{Active} is a composite state, it is defined as the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
 
 \noindent $Q = \{Start~Setting, Setting, Setting~Complete, Washing, Rinse, Spin\}$\\
-\noindent $\Sigma_1 = \{cancel/reset~settings, press~button~for~cycle~type, set~program, washing~complete, after(3 mins), after(2 mins)\}$\\
-\noindent $\Sigma_2 = \{lock~door, unlock~door\}$\\
+\noindent $\Sigma_1 = \{cancel, press~button~for~cycle~type, program~set, washing~complete, after(3 mins), after(2 mins)\}$\\
+\noindent $\Sigma_2 = \{reset~settings, lock~door, unlock~door\}$\\
 \noindent $q_0: Start~Setting$\\
 \noindent $V: door = \{open, closed\}$\\
 \noindent $\Lambda$: Transition specifications\\
-\indent 1. $\rightarrow Start Setting$\\
-\indent 2. $Start Setting \rightarrow Setting$\\
-\indent 3. $Setting \xrightarrow {\text {cancel/reset settings}} Start Setting$\\
-\indent 4. $Setting \xrightarrow {\text {press button for cycle type}} Setting Complete$\\
-\indent 5. $Setting Complete \xrightarrow {\text {program set [door is closed] / lock door}} Washing$\\
+\indent 1. $\rightarrow \textit{Start Setting}$\\
+\indent 2. $\textit{Start Setting} \rightarrow Setting$\\
+\indent 3. $Setting \xrightarrow {\text {cancel/reset settings}} \textit{Start Setting}$\\
+\indent 4. $Setting \xrightarrow {\text {press button for cycle type}} \textit{Setting Complete}$\\
+\indent 5. $\textit{Setting Complete} \xrightarrow {\text {program set [door is closed] / lock door}} Washing$\\
 \indent 6. $Washing \xrightarrow {\text {washing complete}} Rinse$\\
 \indent 7. $Rinse \xrightarrow {\text {after(3min)}} Spin$\\
 \indent 8. $Spin \xrightarrow {\text {after(2min) / unlock door}} Exit$\\
@@ -23,12 +23,10 @@
 \noindent The UML state diagram is shown in Figure~\ref{fig:Active}.
 
 \newpage
-
 \subsection{State transition diagram}
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.8\textwidth]{Active}
-		  \caption{State Diagram of Active State}
-  \label{fig:Active}
+		  \caption{Active State Diagram}\label{fig:Active}
 \end{figure}
