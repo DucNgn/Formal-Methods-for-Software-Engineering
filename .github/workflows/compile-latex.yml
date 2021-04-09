@@ -16,7 +16,7 @@ jobs:
 
     strategy:
         matrix:
-            assignment_no: [1, 2]
+            assignment_no: [1, 2, 3]
     
     steps:
       - name: Set up Git repository

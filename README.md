@@ -4,4 +4,5 @@
 #### Assignments:
 + [A1: Propositional and Predicate Logic, Structures, Binary Relations, Functions and Relational Calculus](./Assignment1)
 + [A2: The Object-Z specification language](./Assignment2)
++ [A3: Extended Finite State Machines](./Assignment3)
 
