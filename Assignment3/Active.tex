@@ -1,19 +1,19 @@
 \newpage
-\section{Formal Specifications for Active}
+\section{Active Composite State}
 
 \subsection{Mathematical Representation}
 
-\noindent The EFSM of the metro passageway is the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
+\noindent As \textit{Active} is a composite state, it is defined as the tuple $S = (Q, \Sigma_1, \Sigma_2, q_0, V, \Lambda)$, where\\
 
-\noindent $Q = \{Start Setting, Setting, Setting Complete, Washing, Rinse, Spin\}$\\
-\noindent $\Sigma_1 = \{cancel, press Button for Cycle Type, set Program, washing Complete, after(3 mins), after(2 mins)\}$\\
-\noindent $\Sigma_2 = \{lock Door, unlock Door\}$\\
-\noindent $q_0: Setting$\\
+\noindent $Q = \{Start~Setting, Setting, Setting~Complete, Washing, Rinse, Spin\}$\\
+\noindent $\Sigma_1 = \{cancel/reset~settings, press~button~for~cycle~type, set~program, washing~complete, after(3 mins), after(2 mins)\}$\\
+\noindent $\Sigma_2 = \{lock~door, unlock~door\}$\\
+\noindent $q_0: Start~Setting$\\
 \noindent $V: door = \{open, closed\}$\\
 \noindent $\Lambda$: Transition specifications\\
 \indent 1. $\rightarrow Start Setting$\\
 \indent 2. $Start Setting \rightarrow Setting$\\
-\indent 3. $Setting \xrightarrow {\text {cancel}} Start Setting$\\
+\indent 3. $Setting \xrightarrow {\text {cancel/reset settings}} Start Setting$\\
 \indent 4. $Setting \xrightarrow {\text {press button for cycle type}} Setting Complete$\\
 \indent 5. $Setting Complete \xrightarrow {\text {program set [door is closed] / lock door}} Washing$\\
 \indent 6. $Washing \xrightarrow {\text {washing complete}} Rinse$\\
@@ -24,12 +24,11 @@
 
 \newpage
 
-\subsection{UML state diagrams}
+\subsection{State transition diagram}
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=0.8\textwidth]{./figures/eps/metro.eps}
-		  \caption{Washing Machine.}
+		\includegraphics[width=0.8\textwidth]{Active}
+		  \caption{State Diagram of Active State}
   \label{fig:Active}
 \end{figure}
-
